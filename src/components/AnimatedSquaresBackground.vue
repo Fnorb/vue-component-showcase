@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'AnimatedBackground',
+  name: 'AnimatedSquaresBackground',
   props: {
     trackingContainer: {
       type: String,
@@ -20,12 +20,12 @@ export default {
       listenersSet: false,
       tileMinSizePX: 30,
       tileMaxSizePX: 120,
-      effectMax: 2,
+      effectMax: 3,
       effectRange: 150,
       columnWidths: [],
       rowHeights: [],
-      rectangleWidth: 200,  
-      rectangleHeight: 10, 
+      rectangleWidth: 100,  
+      rectangleHeight: 100, 
       rectangleColor: 171,
       rectangleSaturation: 100,
       rectangleLightness: [],
@@ -63,7 +63,7 @@ export default {
       this.upgradeAnimatedBGDimensions();
       this.placeTiles();
       this.initiaLizeLightness();
-      document.querySelector('.app-container').addEventListener('mousemove', this.handleMouseMove);
+      document.querySelector(this.trackingContainer).addEventListener('mousemove', this.handleMouseMove);
 
       this.animate(); // Startet die Animationsschleife
     });
